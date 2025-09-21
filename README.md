@@ -22,7 +22,7 @@
 - Standard Android **File I/O**
 
 ---
-[⬇️ Download the APK](https://github.com/alazar80/MyKeyboard/raw/main/filecombiner.apk)
+[⬇️ Download the APK](https://github.com/alazar80/MyKeyboard/raw/main/File%20Combiner.apk)
 ---
 
 ## 🚀 Quick Start (Build)

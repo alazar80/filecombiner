@@ -18,7 +18,7 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
-
+import android.os.Environment;
 public class MainActivity extends AppCompatActivity {
 
     private static final int PICK_FILES_REQUEST = 1;
@@ -95,8 +95,15 @@ public class MainActivity extends AppCompatActivity {
         return result.toString();
     }
 
+
+
     public File saveAsTextFile(Context context, String content) {
-        File file = new File(context.getExternalFilesDir(null), "combined_files.txt");
+        File downloadsDir = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS);
+        if (!downloadsDir.exists()) {
+            downloadsDir.mkdirs();
+        }
+
+        File file = new File(downloadsDir, "combined_files.txt");
 
         try (FileOutputStream fos = new FileOutputStream(file)) {
             fos.write(content.getBytes());
@@ -107,4 +114,5 @@ public class MainActivity extends AppCompatActivity {
 
         return file;
     }
+
 }
